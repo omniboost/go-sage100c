@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/omniboost/go-fixedwidth"
+	"github.com/ianlopshire/go-fixedwidth"
 )
 
 type Lines []Line

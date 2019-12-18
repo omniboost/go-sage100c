@@ -6,7 +6,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/omniboost/go-fixedwidth"
+	"github.com/ianlopshire/go-fixedwidth"
 )
 
 type UpdateExistingAccountFlag int

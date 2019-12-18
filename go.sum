@@ -1,0 +1,5 @@
+github.com/omniboost/go-fixedwidth v0.2.1 h1:zcX7vOrf/xrBrM3ZOuLlf4EDI3+eRwKxODsIBf92tRs=
+github.com/omniboost/go-fixedwidth v0.2.1/go.mod h1:y53CBQcWsPg+XHyxklemNRaUXS9dujFpjcqgt+h95HI=
+github.com/omniboost/go-fixedwidth v0.2.2-0.20191210131226-9b59077c8706 h1:hX+SZ4gt2bpj4ZuH15G2guUOe1LPV4RFTaskl0nAZEI=
+github.com/omniboost/go-fixedwidth v0.2.2-0.20191210131226-9b59077c8706/go.mod h1:dQ0iYOVDduEI/xpIZ09X07sGmwTRFruVrHZcbfuNFcI=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

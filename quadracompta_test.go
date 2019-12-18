@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/omniboost/go-fixedwidth"
+	"github.com/ianlopshire/go-fixedwidth"
 	"github.com/omniboost/go-quadracompta"
 )
 
@@ -25,7 +25,7 @@ func TestTypeC(t *testing.T) {
 
 	lines := quadracompta.Lines{}
 	dec := fixedwidth.NewDecoder(r)
-	dec.SetSeparator("\r\n")
+	dec.SetLineTerminator([]byte("\r\n"))
 	dec.SetUseCodepointIndices(true)
 	err = dec.Decode(&lines)
 	if err != nil {
