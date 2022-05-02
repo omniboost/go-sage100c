@@ -31,7 +31,7 @@ func (a Amount) MarshalFixedWidth(spec fixedwidth.FieldSpec) ([]byte, error) {
 		length = 13
 	}
 
-	i := math.RoundToEven(float64(a) * 100)
+	i := int(math.RoundToEven(float64(a) * 100))
 
 	f := fmt.Sprintf("%%0+%dv", length-1)
 	s := sign + fmt.Sprintf(f, i)
