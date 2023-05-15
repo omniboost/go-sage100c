@@ -3,6 +3,7 @@ package sage100c
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"time"
 )
 
@@ -58,7 +59,7 @@ func (a Amount) MarshalFixedWidth() ([]byte, error) {
 		side = "C"
 	}
 
-	return []byte(fmt.Sprintf("%s%019.2f", side, float64(a))), nil
+	return []byte(fmt.Sprintf("%s%020.2f", side, math.Abs(float64(a)))), nil
 }
 
 type Date struct {

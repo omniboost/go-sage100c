@@ -37,7 +37,7 @@ type Line struct {
 	// JJMMAA
 	DateEcheance string `fixed:"78,83"`
 	// Montant en monnaie de tenue de compte
-	MontantCompte Amount `fixed:"85,104,right,0"`
+	MontantCompte Amount `fixed:"84,104,right,0"`
 	// N: Normale
 	// A: A-Noveau
 	// S: Simulation
