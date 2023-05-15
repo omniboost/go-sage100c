@@ -1,4 +1,4 @@
-module github.com/omniboost/go-quadracompta
+module github.com/omniboost/go-sage100c
 
 go 1.13
 

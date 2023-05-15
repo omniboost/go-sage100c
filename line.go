@@ -1,4 +1,4 @@
-package quadracompta
+package sage100c
 
 import (
 	"encoding/json"

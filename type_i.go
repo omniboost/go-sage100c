@@ -1,4 +1,4 @@
-package quadracompta
+package sage100c
 
 type TypeI struct {
 	Type       string `fixed:"1,1"`

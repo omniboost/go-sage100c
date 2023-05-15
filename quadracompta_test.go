@@ -1,4 +1,4 @@
-package quadracompta_test
+package sage100c_test
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/ianlopshire/go-fixedwidth"
-	"github.com/omniboost/go-quadracompta"
+	"github.com/omniboost/go-sage100c"
 )
 
 func TestTypeC(t *testing.T) {
@@ -23,7 +23,7 @@ func TestTypeC(t *testing.T) {
 		t.Error(err)
 	}
 
-	lines := quadracompta.Lines{}
+	lines := sage100c.Lines{}
 	dec := fixedwidth.NewDecoder(r)
 	dec.SetLineTerminator([]byte("\r\n"))
 	dec.SetUseCodepointIndices(true)

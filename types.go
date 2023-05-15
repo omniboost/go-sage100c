@@ -1,4 +1,4 @@
-package quadracompta
+package sage100c
 
 import (
 	"encoding/json"
@@ -107,7 +107,7 @@ func (d *Date) UnmarshalJSON(data []byte) (err error) {
 		return nil
 	}
 
-	// try quadracompta date format
+	// try sage100c date format
 	d.Time, err = time.Parse("020106", value)
 	return err
 }
