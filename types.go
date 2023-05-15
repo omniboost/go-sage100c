@@ -3,54 +3,62 @@ package sage100c
 import (
 	"encoding/json"
 	"fmt"
-	"math"
 	"time"
-
-	"github.com/ianlopshire/go-fixedwidth"
 )
 
-type UpdateExistingAccountFlag int
+// type UpdateExistingAccountFlag int
 
-// C/F/G
-type AccountType string
+// // C/F/G
+// type AccountType string
+
+// type Amount float64
+
+// func (a Amount) MarshalFixedWidth() ([]byte, error) {
+// 	if a == 0.0 {
+// 		return []byte{}, nil
+// 	}
+
+// 	sign := "+"
+// 	if a < 0.0 {
+// 		sign = "-"
+// 	}
+
+// 	length := spec.EndPos + 1 - spec.StartPos
+// 	if length < 2 {
+// 		length = 13
+// 	}
+
+// 	i := int(math.RoundToEven(float64(a) * 100))
+
+// 	f := fmt.Sprintf("%%0+%dv", length-1)
+// 	s := sign + fmt.Sprintf(f, i)
+// 	return []byte(s), nil
+// }
+
+// type Flag bool
+
+// func (f *Flag) UnmarshalFixedWidth(data []byte) error {
+// 	// log.Println(string(data))
+// 	return nil
+// }
+
+// func (f Flag) MarshalFixedWidth() ([]byte, error) {
+// 	if f == true {
+// 		return []byte("1"), nil
+// 	} else {
+// 		return []byte("0"), nil
+// 	}
+// }
 
 type Amount float64
 
-func (a Amount) MarshalFixedWidth(spec fixedwidth.FieldSpec) ([]byte, error) {
-	if a == 0.0 {
-		return []byte{}, nil
-	}
-
-	sign := "+"
+func (a Amount) MarshalFixedWidth() ([]byte, error) {
+	side := "D"
 	if a < 0.0 {
-		sign = "-"
+		side = "C"
 	}
 
-	length := spec.EndPos + 1 - spec.StartPos
-	if length < 2 {
-		length = 13
-	}
-
-	i := int(math.RoundToEven(float64(a) * 100))
-
-	f := fmt.Sprintf("%%0+%dv", length-1)
-	s := sign + fmt.Sprintf(f, i)
-	return []byte(s), nil
-}
-
-type Flag bool
-
-func (f *Flag) UnmarshalFixedWidth(data []byte) error {
-	// log.Println(string(data))
-	return nil
-}
-
-func (f Flag) MarshalFixedWidth(spec fixedwidth.FieldSpec) ([]byte, error) {
-	if f == true {
-		return []byte("1"), nil
-	} else {
-		return []byte("0"), nil
-	}
+	return []byte(fmt.Sprintf("%s%019.2f", side, float64(a))), nil
 }
 
 type Date struct {
@@ -74,7 +82,7 @@ func (d *Date) UnmarshalFixedWidth(data []byte) error {
 	return nil
 }
 
-func (d Date) MarshalFixedWidth(spec fixedwidth.FieldSpec) ([]byte, error) {
+func (d Date) MarshalFixedWidth() ([]byte, error) {
 	if d.Time.IsZero() {
 		return []byte{}, nil
 	}
